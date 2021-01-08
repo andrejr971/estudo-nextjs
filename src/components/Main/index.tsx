@@ -1,7 +1,23 @@
-export default function Main() {
+import { Description, Illustration, Logo, Title, Wrapper } from './styles';
+
+interface MainProps {
+  title: string;
+  description: string;
+}
+
+export default function Main({ title, description }: MainProps) {
   return (
-    <main>
-      <h1>React avançado</h1>
-    </main>
+    <Wrapper>
+      <Logo
+        src="/img/logo.svg"
+        alt="Imagem de um átomo e React Avançado escrito ao lado"
+      />
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+      <Illustration
+        src="/img/hero-illustration.svg"
+        alt="Um desenvolvedor de frente para tela com código"
+      />
+    </Wrapper>
   );
 }

@@ -4,7 +4,12 @@ import Main from '.';
 
 describe('<Main />', () => {
   it('should render the heading', () => {
-    const { container } = render(<Main />);
+    const { container } = render(
+      <Main
+        title="React Avançado"
+        description="TypeScript, ReactJS, NextJS e StyledComponents"
+      />,
+    );
 
     expect(
       screen.getByRole('heading', {
@@ -13,5 +18,16 @@ describe('<Main />', () => {
     ).toBeInTheDocument();
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should render the colors correctly', () => {
+    const { container } = render(
+      <Main
+        title="React Avançado"
+        description="TypeScript, ReactJS, NextJS e StyledComponents"
+      />,
+    );
+
+    expect(container.firstChild).toHaveStyle({ background: '#06092b' });
   });
 });

@@ -1,11 +1,9 @@
 import { Description, Illustration, Logo, Title, Wrapper } from './styles';
 
-interface MainProps {
-  title: string;
-  description: string;
-}
-
-export default function Main({ title, description }: MainProps) {
+export default function Main({
+  title = 'React Avançado',
+  description = 'TypeScript, ReactJS, NextJS e StyledComponents',
+}) {
   return (
     <Wrapper>
       <Logo
